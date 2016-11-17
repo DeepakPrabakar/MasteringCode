@@ -1,0 +1,33 @@
+{
+	"title":"articleContent.html",
+	"article_id":"1",
+	
+	"tabs":{
+	"java":
+		{
+			"id":"paris",
+			"menu":"paris tab",
+			"url":"paris.html",
+			"tabhead":"JAVA"
+			},
+	
+	"css":
+			{
+				"id":"london",
+				"menu":"london tab",
+				"url":"london.html",
+				"tabhead":"CSS"
+			}
+
+			},
+
+	"array":[
+				{
+				"id3":1,
+				"id1":2
+				
+			}
+		]
+
+}
+

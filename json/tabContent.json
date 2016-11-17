@@ -1,0 +1,60 @@
+[
+{
+	"title":"articleContent.html",
+	"article_id":"1",
+	"tabs":			
+	{
+		"JAVA":
+		{
+			"id":"paris",
+			"menu":"paris tab",
+			"url":"paris.html",
+			"tabhead":"JAVA"
+			},
+			"CSS":
+			{
+				"id":"london",
+				"menu":"london tab",
+				"url":"london.html",
+				"tabhead":"CSS"
+				},
+				"TEST TAB":
+				{
+					"id":"test",
+					"menu":"test with paris content tab",
+					"url":"paris.html",
+					"tabhead":"Test Tab"
+				}
+
+			}
+
+			},
+
+			{
+				"title":"articleContent.html",
+				"article_id":"232",
+				"tabs":{
+
+					"js":
+					{
+
+						"id":"california",
+						"menu":"california tab",
+						"url":"california.html",
+						"tabhead":"JAVASCRIPT"
+					},
+					"js1":
+					{
+
+						"id":"paris",
+						"menu":"california tab",
+						"url":"california.html",
+						"tabhead":"JAVASCRIPT"
+					}
+
+
+				}
+
+			}
+
+			]

@@ -1,0 +1,53 @@
+<head>
+	 <link href="css/findings.css" rel="stylesheet">
+</head>	
+<header>This is how a article page wil look with json dynaic data</header>
+
+
+
+
+
+
+<div id="scrollArea" ng-controller="ScrollCtrl">
+	<div class="col-md-2 right_sidebar pull-right">
+		<h1>Recent Articles</h1>
+		
+
+<div ng-repeat="article in articles">
+
+		 <a ng-click="gotoElement(article.article_id)">{{article.title}} - {{article.postedOn}}</a>
+		 <br/>
+	
+   
+</div> 
+
+   
+	</div>
+	<div class="col-md-10 articles_mainconent">
+		<h1>All Articles</h1>
+<div ng-repeat="article in articles">
+
+		<div id='{{article.article_id}}'>
+			<h3>{{article.title}} </h3>
+			<small>Published on {{article.postedOn}}</small>
+			<p>{{article.description}}</p>
+		
+			 <ul class="nav nav-tabs">
+				<li ng-class="{active: $index==0}" ng-repeat="(key,value) in article.tabs">
+					<a data-toggle="tab" data-target="#{{value.id}}" >{{key}}</a>
+				</li>
+			</ul>
+			<div  class="tab-content">
+				<div ng-class="{true:'tab-pane fade in active',false:'tab-pane fade'}[$index==0]"ng-repeat="(key,value) in article.tabs" id="{{value.id}}" >
+					<div ng-include="value.url"></div>
+				</div>
+			<hr>
+			</div>
+		</div>
+</div>
+
+	</div>
+</div>
+
+
+

@@ -1,0 +1,229 @@
+<link rel="stylesheet" type="text/css" href="css/posts.css">
+
+<header>Node JS</header>
+
+
+
+<div id="2" class="post_body">
+
+<h3>Sample Post</h3>
+
+</div>
+
+<div id="1" class="post_body">
+	<h3>Read Files in a folder using fs module</h3>
+		<pre ng-syntax class="brush: js; ">
+var fs= require('fs');
+
+fs.readdir('C:/Users/prabakad/Desktop/youtube site/', function(err,list){
+	
+    if(err){ 
+		console.log(err);
+		throw err;
+	}
+	else 
+		console.log(list);	
+});
+	</pre>
+	
+
+</div>
+
+
+<div id="2" class="post_body">
+
+<h3>Getting path using fs module</h3>
+<p>Gives the path in which the file is located</p>
+		<pre ng-syntax class="brush: js; ">
+var fs=require('fs');
+fs.realpath(__dirname, function(err, path) {
+    if (err) {
+        console.log(err);
+     return;
+    }
+    console.log('Path is : ' + path);
+});
+</pre>
+
+</div>
+
+
+<div id="3" class="post_body">
+
+<h3>Write data to json file using fs module</h3>
+
+<pre ng-syntax class="brush:js;">
+var fs=require('fs');
+var data=['111','222','222','222','222','111','222','ss'];
+
+var outputFilename = 'data.json';
+
+fs.writeFile(outputFilename, JSON.stringify(data, null, 4), function(err) {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log("JSON saved to " + outputFilename);
+    }
+});
+</pre>
+
+</div>
+
+
+
+<div id="2" class="post_body">
+
+<h3>Reading json file using fs module</h3>
+
+<pre ng-syntax class="brush:js;">
+var fs=require('fs');
+
+fs.readFile('data.json',function(err,data){
+
+	var obj = JSON.parse(data);
+	console.log(obj);
+
+	for(key in obj)
+	{
+		console.log("key: "+key+" - value: "+obj[key]);
+	}
+	
+});
+</pre>
+</div>
+
+
+
+
+===============================
+
+<ol>
+	<li>In cmd, it shows undefined when you are not returning anything. console.log does not return anything. Math.sqrt return</li>
+	<li>Creating simple server</li>
+	<pre ng-syntax class="brush: js;">
+var http=require('http');
+
+http.createServer(function(req,res){
+	
+	res.writeHead(200,{"content-Type":"text/plain"});
+	res.end("hello");
+	
+}).listen(3000);
+ console.log("server running in 3000");
+	</pre>
+
+	<li>$ npm install -g express-generator</li>
+	<li>$ express appName</li>
+
+</ol>
+
+
+<div id="1" class="post_body">
+	<h3>To create Express App</h3>
+
+	<ul>
+		<p>Using express generator</p>
+
+		<li>$ npm install -g express-generator</li>
+	<li>$ express appName</li>
+
+	<p>Go to the folder usinf cd appName</p>
+
+	<pre class="brush: js;">
+	$ npm install -g express-generator
+
+	$ express appName
+
+	$ npm install
+
+	$ npm start 
+
+	</pre>
+
+<li>adding sql</li>
+
+<div class="code">
+
+dasd
+d
+asd<br>
+as
+das
+das
+</div>
+
+<div class="code">
+<pre class="brush: js; ">
+
+var mysql = require('mysql');
+var connection= require('express-myconnection');
+
+var app = express();
+
+//Create SQL Connection
+app.use(connection(mysql,{
+	host:"localhost",
+	user:"root",
+	password:"system",
+	database:"nodejs"
+},'request'));
+
+</pre></div>
+
+
+<p>"mysql":"*",
+	"express-myconnection":"*"</p>
+
+
+<li>to insert a data</li>
+<pre class="brush:js;">
+
+router.post('/createEmployee',function(req,res,next){
+	
+	try{
+		
+		var reqObj=req.body;
+		console.log(reqObj);
+		req.getConnection(function(err,conn){
+			
+			if(err)
+			{
+				console.error("SQL Connection Error: ",err);
+				return next(err);
+			}
+			else
+			{
+				var insertSql="INSERT INTO EMPLOYEE SET ?";
+				var insertValues ={
+					
+					"Emp_Name":reqObj.empName,
+					"Role_id":reqObj.roleId
+				};
+				var query = conn.query(insertSql,insertValues,function(err,result){
+					if(err)
+					{
+						console.error("SQL error",err);
+						return next(err);
+					}
+					console.log(result);
+					var Employee_Id = result.insertId;
+					res.json({"Emp_id":Employee_Id});
+				});
+			}
+		});
+	}
+	catch(ex){
+		console.log(ex);
+		return next(err);
+					
+	}
+	
+});
+</pre>
+
+
+	</ul>
+
+
+
+</div>

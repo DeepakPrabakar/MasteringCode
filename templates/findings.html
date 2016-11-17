@@ -1,0 +1,178 @@
+<link href="css/article.css" rel="stylesheet">
+
+<header>My Developer Learnings / Finds</header>
+
+<div ng-controller="articleCtrl">
+<div id="scrollArea" ng-controller="ScrollCtrl">
+  <div class="col-md-3 right_sidebar pull-right ">
+    <h3>Recent Articles</h3>
+
+    <p>	<input class="form-control" ng-model="query" type="text" placeholder="Search Article ...">
+	</p>
+   
+
+<ol>
+ <div ng-repeat="article in articles">
+       
+        <h4 ><li>
+        
+          <a ng-click="gotoElement(article.id)">{{article.title}}</a>
+		</li> </h4>
+
+      </div>
+
+
+
+ <div ng-repeat="fileName in fileNames | orderBy:'-creationTime'  | filter:query">
+        <h4 ><li>
+        
+       <!--    <a ng-click="gotoElement($index+1)">{{article.charAt(0).toUpperCase()+article.slice(1).substr(0,article.length-5)}}</a>
+        -->   
+          <a ng-click="gotoElement($index+1)">{{fileName.name.substr(0,fileName.name.length-4)}}</a>
+      </li>   </h4>
+
+      </div>
+   </ol>
+
+      
+   
+  </div>
+  <div class="col-md-9 articles_mainconent pull-left">
+    <h1>All Articles</h1>
+
+<ol>
+
+	<h2 class="title">sampole title1</h2>
+<h3 class="title">sampole title2</h3>
+
+
+    <article id="article_sample">
+  
+  <li><h3>Sample</h3></li>
+  <small>Posted on Sep</small>
+  
+  <p>if i put photos in that folder also it appear.</p>
+  <p>i can also craete it</p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+
+  <h3>.png snipping is better than .jpg</h3>
+  
+  </article>
+
+     <article id="article_3">
+  
+  <li><h3>Sitemap links</h3></li>
+  <small>Posted on 24 Sep 2016, 10.09 am</small>
+  
+
+  <ol>
+      <li><a href="" target="_blank"></a></li>
+      <li><a href="http://www.redips.net/sitemap/" target="_blank">http://www.redips.net/sitemap/</a></li>
+      <li><a href="http://www.redips.net/sitemap.xml" target="_blank">http://www.redips.net/sitemap.xml</a></li>
+      <li><a href="http://www.arnebrachhold.de/projects/wordpress-plugins/google-xml-sitemaps-generator/?utm_source=wp-wm&utm_medium=install&utm_content=plugin-side" target="_blank">http://www.arnebrachhold.de/projects/wordpress-plugins/google-xml-sitemaps-generator/?utm_source=wp-wm&utm_medium=install&utm_content=plugin-side</a></li>
+
+
+  </ol>
+ 
+  
+  </article>
+
+ <article id="article_1">
+  
+  <li><h3>Visual Representation of SQL Joins</h3></li>
+  <p><small>Posted on 9-19-2016</small>
+  </p><a href="http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins">http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</a>
+ 	<br><a href="https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/">https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/</a>
+ 	<br>
+ 	<a href="http://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html">http://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html</a>
+ 	<br>
+ 	<a href="http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/">http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/</a>
+ 	<br>
+ 	<a href="http://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql">http://stackoverflow.com/questions/11754781/how-to-declare-a-variable-in-mysql</a>
+ 	<br>
+ 	<a href="http://stackoverflow.com/questions/3888735/mysql-set-user-variable-from-result-of-query">http://stackoverflow.com/questions/3888735/mysql-set-user-variable-from-result-of-query</a>
+  
+  </article>
+
+  <article id="article_2">
+
+  	<li><h3>How to open pdf in javascript</h3></li>
+  <!-- 	<footer><small>Posted on 20-9-16 11:05am</small>
+</footer> -->
+<small>Posted on 20-9-16 11:05am</small>
+ <a href="#" onclick="window.open('4007.pdf', '_blank', 'fullscreen=yes'); return false;">MyPDF</a>
+   
+ <a href="#" onclick="window.open('Type of Triangle _ SQL Question _ HackerRank.pdf'); return false;">Type of Triangle _ SQL Question _ HackerRank</a>
+
+
+  	<pre ng-syntax class="brush:js;">
+<a href="#" onclick="window.open('MyPDF.pdf', '_blank', 'fullscreen=yes'); return false;">MyPDF</a>
+
+  	</pre>
+
+
+  </article>
+
+
+<div ng-repeat="fileName in fileNames | orderBy:'-creationTime' | filter:query">
+				<article id="{{$index+1}}">
+					<!-- <h3>{{fileName.charAt(0).toUpperCase()+fileName.slice(1).substr(0,fileName.length-5)}}</h3>
+					 -->
+					 <h3><li>{{fileName.name.substr(0,fileName.name.length-4)}}</l1></h3>
+					 <small>Posted on {{fileName.creationTime}}</small>	
+				<!-- 	 <br>				
+				 -->	<img ng-src="img/findings/{{fileName.name}}">
+
+		 
+				</article>
+			</div>
+
+</ol>
+
+
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- <div ng-controller="articleCtrl">
+	<div id="scrollArea" ng-controller="ScrollCtrl">
+	 	 <div class="col-md-2 right_sidebar pull-right ">
+			<h3>Recent Articles</h3>
+			
+			<div ng-repeat="article in articles">
+		        <h4 >
+		        
+		          <a ng-click="gotoElement(article.id)">{{article.title}}</a>
+
+		        </h4>
+
+		    </div>
+
+		</div>
+	
+		<div class="col-md-10 articles_mainconent pull-left">
+		    <h1>All Articles</h1>
+
+			<div ng-repeat="fileName in fileNames">
+				<article id="article_id">
+					<h3>{{fileName}}</h3>
+					<img ng-src="img/findings/{{fileName}}" width="100%">
+
+		 
+				</article>
+			</div>
+	  	</div>
+	</div>
+
+</div> -->
+
+
+

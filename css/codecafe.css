@@ -1,0 +1,31 @@
+body{
+
+background-color: #eee;
+}
+.box{
+	border: 1px dotted red;
+}
+
+.cover{
+
+	background-color: #fff;
+	padding: 10px;
+	
+
+}
+
+.leftside{
+	padding-left: 30px;
+}
+
+.rightside{
+	padding-right: 30px;
+}
+
+
+.well{
+	background-color: #fff;
+}
+.navba1r{
+background-color: #fff;	
+}

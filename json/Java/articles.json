@@ -1,0 +1,77 @@
+[
+	{
+		"article_id":"1",
+		"title":"Read and Write JSON in JAVA",
+		"postedOn":"7th Sep, 2016",
+		"description":"In this post,we will read and write JSON using JSON.simple.",
+		
+		"tabs":			
+		{
+			"Write JSON to file":
+			{
+				"id":"1_writeJsonToFile",
+				"url":"templates/Java/writeJsonToFile.html"
+			},
+			"Read JSON to file":
+			{
+				"id":"1_readJsonToFile",
+				"url":"templates/Java/readJsonToFile.html"
+				
+			}
+			
+		}
+	},
+
+
+	{
+		"article_id":"2",
+		"title":"Read and Write JSON in JAVA2",
+		"postedOn":"7th Sep, 2016",
+		"description":"In this post,we will read and write JSON using JSON.simple.",
+		
+		"tabs":			
+		{
+			"Write JSON to file":
+			{
+				"id":"1_writeJsonToFile",
+				"url":"templates/Java/writeJsonToFile.html"
+			},
+			"Read JSON to file":
+			{
+				"id":"1_readJsonToFile",
+				"url":"templates/Java/readJsonToFile.html"
+				
+			}
+			
+		}
+	},
+	{
+		"article_id":"3",
+		"title":"Read and Write JSON in JAVA3",
+		"postedOn":"7th Sep, 2016",
+		"description":"In this post,we will read and write JSON using JSON.simple.",
+		
+		"tabs":			
+		{
+			"Write JSON to file":
+			{
+				"id":"2_writeJsonToFile",
+				"url":"templates/Java/writeJsonToFile.html"
+			},
+			"Read JSON to file":
+			{
+				"id":"2_readJsonToFile",
+				"url":"templates/Java/readJsonToFile.html"
+				
+			},
+			"TEST TAB":
+			{
+				"id":"test",
+				"menu":"test with paris content tab",
+				"url":"paris.html",
+				"tabhead":"Test Tab"
+			}
+		}
+	}
+
+]

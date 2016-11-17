@@ -1,0 +1,99 @@
+<link rel="stylesheet" type="text/css" href="css/article.css">
+
+<header>PHP</header>
+
+<div ng-controller="articleCtrl">
+<div id="scrollArea" ng-controller="ScrollCtrl">
+  <div class="col-md-2 right_sidebar pull-right ">
+    <h3>Recent Articles</h3>
+   
+
+
+ <div ng-repeat="article in articles">
+        <h4 >
+        
+          <a ng-click="gotoElement(article.id)">{{article.title}}</a>
+
+        </h4>
+
+            </div>
+
+ 
+
+   
+  </div>
+  <div class="col-md-10 articles_mainconent pull-left">
+    <h1>All Articles</h1>
+
+
+
+<article id="article_2">
+<h3 >Php links - Rest API</h3>
+<small>Posted on 24th Sep 2016, 10.02 am</small>
+
+<ol>
+  <li><a href="http://www.codediesel.com/php/create-a-quick-rest-api-using-slim-framework/" target="_blank">http://www.codediesel.com/php/create-a-quick-rest-api-using-slim-framework/</a></li>
+  <li><a href="https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/How_to_create_logs_with_PHP">https://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/How_to_create_logs_with_PHP</a></li>
+  <li><a href="http://www.redips.net/php/write-to-log-file/">http://www.redips.net/php/write-to-log-file/</a></li>
+  <li><a href="http://www.redips.net/php/log-errors-separate-file/">http://www.redips.net/php/log-errors-separate-file/</a></li>
+  
+
+</ol>
+</article>
+
+<article id="article_1">
+<h3 >Php links to see - based on Rest API, SQL Injection, log file</h3>
+<small>Posted on 14th Sep 2016</small>
+
+<ol>
+  <li><a href="http://www.phptherightway.com/#mysql_extension">http://www.phptherightway.com/#mysql_extension</a></li>
+  <li><a href="http://wiki.hashphp.org/Validation">http://wiki.hashphp.org/Validation</a></li>
+  <li><a href="https://www.leaseweb.com/labs/2015/10/creating-a-simple-rest-api-in-php/">https://www.leaseweb.com/labs/2015/10/creating-a-simple-rest-api-in-php/</a></li>
+  <li><a href="https://www.leaseweb.com/labs/2015/11/php-script-to-tail-a-log-file-using-telnet/">https://www.leaseweb.com/labs/2015/11/php-script-to-tail-a-log-file-using-telnet/</a></li>
+
+</ol>
+</article>
+
+<article id="article_1">
+<h3 >How to get File Names in a Folder</h3>
+<small>Posted on 13th Sep 2016</small>
+  
+
+<pre ng-syntax class="brush: php; ">
+ &lt;?php
+$dir = "C:/Users/prabakad/Desktop/youtube site/";
+$return_array = array();
+if(is_dir($dir)){
+    if($dh = opendir($dir)){
+        while(($file = readdir($dh)) != false){
+            if($file == "." or $file == ".."){
+            } else {
+                $return_array[] = $file;
+            }
+        }
+    }
+    echo json_encode($return_array);
+}
+?>;
+
+</pre>
+
+
+</article>
+
+<!-- dasda
+
+<div ng-controller="jsonCtrl">
+
+{{articles}}
+
+<div ng-controller="codeSeriesCtrl">
+  {{links}}
+</div> -->
+
+
+  </div>
+</div>
+</div>
+
+

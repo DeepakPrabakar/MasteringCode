@@ -1,0 +1,158 @@
+<header>Progress</header>
+
+
+<div class="row">
+  <div class="col-md-6">
+ <h4>Progress - 5th September 2016</h4>
+          <ol>
+              
+             <li>Created Basic</li>
+              <li>Added About Page</li>
+              <li>Added Progress Page but no content</li>
+              <li>Added Code Fixes Page but no content</li>
+        <li>Added Angular Page but no content</li>
+            <li>Added Javascript Page but no content</li>
+              <li>Added Sql Page but no content</li>
+              <li>Added Hacker Rank Page but no content</li>
+              <li>Added Java Page but no content</li>
+              <li>Added Php Page but no content</li>
+              <li>Added Python Page but no content</li>
+            </ol>
+               <h4>Progress - 6th September 2016</h4>
+          <ol>
+              
+               <li>added codeseries and populated data from json. no styling done</li>
+              <li>Added web dev tools Page but no content</li>
+              <li>Added code blogs Page but no content</li>
+                <li>Added build and deployment Page but no content</li>
+                <li>brought web dev, code series, code fixexz and code blogs to side bar</li>
+                <li>80% ok with code tabs.</li>
+                <li>almost kinda found scrolyspy </li>
+                <li>all tabs have been disturbed to test scrollspy and tabs</li>
+              
+
+          </ol>
+
+           <h4>Progress - 7th September 2016</h4>
+          <ol>
+              
+               <li>added java tabs with syntaxhighlighter</li>
+               <li>scrollspy completed with recent articles. not much styling done</li>
+               <li>added myfinding with no content</li>
+               <li>pages cleansed</li>
+          </ol>
+
+  </div>
+  <div class="col-md-6">
+          <H4>Tasks - 6-9-2016</H4>
+          <ol>
+            <li>add codeseries playlist tab</li>
+            <li>tools used in web dev, tool name and screen shot below</li>
+            <li>best blog read</li>
+            <li>get input from json</li>
+         
+
+          </ol> 
+   
+    <H4>Tasks - 7-9-2016</H4>
+          <ol>
+            <li>to complete code java css tabs with proper json nd syntaxhighlighter</li>
+            <li>to complete scrolly spy to shoe recent article give dummy article and click nd test</li>
+            <li>add sql server learnings</li>
+            <li>add my findings tab</li>
+            <li>clean the npages</li>
+            <li>try how to add tick to task</li>
+            <li>the tabs are kept open to take scrren shot or copy code</li>
+            <li>add sample tabs for testing</li>
+            <li>add more data and complete wedev tools. what we learnt in github </li>
+            <li>clear the main.css. check how to add sepearte css file and not cluster in one</li>
+            <li>clear the main.css and add separate js files</li>
+            
+
+          </ol> 
+
+           
+
+
+
+ <H4>Tasks - 8-9-2016</H4>
+          <ol>
+            <li> 3 of 7-9 sql server learning add</li>
+            <li>6 of 7-9 add tick</li>
+            <li>see video add mysql db ths progress page</li>
+            <li>8 9 10 11 pending</li>
+            <li>understand angular directives</li>
+            <li>add page to add articles directly either store data in db or create write to json file us require(fs)</li>
+            <li>add search bar in recent artticle section</li>
+
+</ol>
+
+
+<H4>Tasks - 11-9-2016</H4>
+          <ol>
+update optimisation in mactering code
+update hackerrank contests ans and explanation
+1. see nodejs msql
+2. nodejs fs
+2. read and write to json
+3. read word doc
+4. imp of python and php
+5. hackerrasnk 
+6. right shift operator
+7. task of 8th sep
+8. A.P.
+9. comments of others
+10. user article id and takemit and put in recent article see video
+11. modules and directives
+12. mail api
+13. nodejs and angular quiz
+14. angular form submission and validation
+
+
+<h4>tasks with tick</h4>
+
+
+<form>
+title<input type="text" ng-model="task.title" >
+description<input type="text" ng-model="task.description" >
+
+<button type="submit" class="btn btn-success"ng-click="addTask(task);">Add TASK</button>
+
+</form>
+
+
+<!-- messsssssssssss:  {{msg}} {{tasks}}
+ -->
+<br>
+<br>
+<!-- taskkkkkkkkk111111111 {{tasks1}}
+ -->
+
+
+
+<li ng-repeat ="task in tasks1">{{task.title}} {{task.checked}}
+      <input type="checkbox" name="task" ng-model="task.checked" ng-hide="task.checked==1" ng-change="update(task,$index);">
+      <span ng-show="task.checked==1" class="glyphicon glyphicon-ok " style="color: green" > On {{task.completed | date: 'EEEE dd-MMM-yyyy hh:mm:ss a'}}</span>
+ <!--    <div class="glyphicon glyphicon-ok" style="color:green" ng-hide="task.checked">hi in show</div>
+   -->  </li>
+
+<ol >
+
+
+
+
+<li ng-repeat ="task in tasks">{{task.title}}
+      <input type="checkbox" name="task" ng-model="task.checked" ng-hide="task.checked" ng-change="update($index);">
+      <span ng-show="task.checked" class="glyphicon glyphicon-ok " style="color: green" > On {{task.completed | date: 'EEEE dd-MMM-yyyy hh:mm:ss a'}}</span>
+ <!--    <div class="glyphicon glyphicon-ok" style="color:green" ng-hide="task.checked">hi in show</div>
+   -->  </li>
+
+</ol>
+
+
+    
+  </div>
+  
+</div>
+
+ 

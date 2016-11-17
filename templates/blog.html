@@ -1,0 +1,42 @@
+<header>Blog</header>
+
+<h3>Sql Queries Used</h3>
+
+<pre ng-syntax class="brush:sql;">
+CREATE TABLE `PROGRESS5` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Task` varchar(100) NOT NULL,
+  `Description` varchar(100) NOT NULL,
+  `AddedOn` DATETIME NOT NULL,
+  `CompletedOn` DATETIME NOT NULL ,
+  `TimeTaken` DATETIME NOT NULL ,
+  `Archive` int NOT NULL,
+  PRIMARY KEY(ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</pre>
+
+<p>Datetime is used to store the date in mysql</p>
+
+<pre ng-syntax class="brush:sql;">
+$result = mysqli_query($conn, "select id,task, description, 
+DATE_FORMAT(addedon, '%W, %D %b %Y %h:%i:%s %p') as addedOn,
+DATE_FORMAT(completedOn, '%W, %D %b %Y %h:%i:%s %p') as completedOn,
+DATE_FORMAT(timeTaken, '%H hour %i mins %s secs') as timeTaken 
+from progress5 order by addedon DESC");
+</pre>
+
+<p>Using the DATE_FORMAT of SQL, the required format is got</p>
+
+<pre ng-syntax class="brush:sql;">
+
+$sql = "INSERT INTO progress5 (task,description,addedOn,completedOn,timetaken,archive)
+VALUES ('".$task."','',now(),0,0,0)";
+</pre>
+
+<p>Using NOW() date and time are added</p>
+<p>To conver now() to javascript date so that we can use angular to parse it. use new Date() </p>
+<pre ng-syntax class="brush:js;">
+$scope.dat=new Date($scope.tasks5[4].AddedOn);
+</pre>
+
+

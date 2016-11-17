@@ -1,0 +1,125 @@
+<header>SQL</header>
+
+<link href="css/article.css" rel="stylesheet">
+<link href="css/sql.css" rel="stylesheet">
+
+
+<div ng-controller="articleCtrl">
+<div id="scrollArea" ng-controller="ScrollCtrl">
+  <div class="col-md-3 right_sidebar pull-right ">
+    <h3>Recent Articles</h3>
+   
+ <p>  <input class="form-control" ng-model="query" type="text" placeholder="Search Article ...">
+  </p>
+
+<ol>
+ <div ng-repeat="article in articles | filter: query">
+        <h4 ><li>
+        
+          <a ng-click="gotoElement(article.id)">{{article.title}}</a>
+</li>
+        </h4>
+
+      </div>
+</ol>
+ 
+
+   
+  </div>
+  
+  <div class="col-md-9 articles_mainconent pull-left">
+    <h1>All Articles</h1>
+
+<article id="">
+  <h3></h3>
+  <small></small>
+  <pre ng-syntax class="brush:sql;">
+  </pre>
+
+</article>
+
+<article id="1">
+  <h3>Find the 2nd MAX salary in the emp table</h3>
+  <small>Posted on 21 September 2016 11:11 am</small>
+  <pre class="brush:sql;">
+select max(sal) from emp where sal not in (select max(sal) from emp );
+
+  </pre>
+  <p>OR</p>
+   <pre class="brush:sql;">
+select * from emp order by sal desc limit 1,1;
+  </pre>
+  <p class="note">Note: Index starts from 0 So 1,1 refers to 2rd row and 2,1 will refer to 3rd row</p>
+  <p>OR</p>
+   <pre class="brush:sql;">
+select max(sal) from emp where sal < (select max(sal) from emp );
+  </pre>
+
+  <img ng-src="img/SQL/MySQL/Find the 2nd MAX salary in the emp table.PNG">
+
+</article>
+
+<article id="3">
+  <h3>Find the 3rd MAX salary in the emp table</h3>
+  <small>Posted on 21 September 2016 11:35 am</small>
+    <pre class="brush:sql;">
+select * from emp order by sal desc limit 2,1; 
+  </pre>
+  <p class="note">Note: Index starts from 0 So 1,1 refers to 2rd row and 2,1 will refer to 3rd row</p>
+  <p>OR</p>
+   <pre class="brush:sql;">
+select max(sal) from emp where sal < (select max(sal) from emp 
+where sal < (select max(sal) from emp));
+
+  </pre>
+
+  <img ng-src="img/SQL/MySQL/Find the 3rd MAX salary in the emp table.PNG">
+
+</article>
+
+
+
+  
+<article id="article_sample">
+<h3 >Sample article in this page</h3>
+<small>Posted on 13th Sep 2016</small>
+  
+  <ul>
+  <li><strong>&lt;article id &gt;</strong> is is ised to fetch the id using the javascript DOM elemnets in the angular controller and displayed on the right tab for navigation</li>
+
+  <li>&lt;h3&gt; tag is used for the title.Again used in navigation to fetch</li>
+  <li>&lt;small&gt; tab is used for the posted date </li>
+</ul>
+<pre ng-syntax class="brush: html; ">
+<article id="article_id">
+<h3>Sample Title</h3>
+<small>Posted on 13th Sep 2016</small>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor i</p>
+
+</pre>
+
+
+</article>
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+</div>
+
+
+
